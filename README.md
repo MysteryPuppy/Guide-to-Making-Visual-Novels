@@ -1,5 +1,5 @@
 # Guide to Making Visual Novels
-### How anyone can turn a story into a game with no programming experience
+### 🖌 How anyone can turn a story into a game with no programming experience 🎨
 ![alt text](https://github.com/lovebirdsnest/Guide-to-Making-Visual-Novels/blob/master/images/home.png "Example visual novel")<br/>
 If you ever wanted to be able to tell a story visually but didn't quite know where to start or felt intimidated by the coding aspect of making a visual novel, this guide is for you. I just spent the summer teaching children ages 10-18 how to code their own visual novels and I can hereby say that I know that *anyone* can create an amazing game. With a little bit of time, and after understanding of some basic concepts, creating a visual novel these days is very intuitive and a fun process.
 
@@ -37,7 +37,7 @@ You can also create a background in the same way, with just a different canvas s
 Now comes the part where we put our images to life. To show a character image on the screen, you simply write `show [name][action]` or, in this case, `show kiwi normal` since I saved my file as `kiwi normal.png`. I'm going to put this right before kiwi says his line. You can also tell Ren'Py where to put the character on the screen by writing `show [name][action] at [right/left]`. In this case I want Kiwi on the left of my screen so I'll write `show kiwi normal at left`. <br/>
 This is good, but we're still missing the background. To add a background, all you have to do is type `scene bg [name]`. Here, I'm going to use my bedroom scene and type `scene bg bedroom` above `show kiwi normal at left`.
 What our code looks like so far:
-![alt text](https://github.com/lovebirdsnest/Guide-to-Making-Visual-Novels/blob/master/images/6.png "How our code looks")
+![alt text](https://github.com/lovebirdsnest/Guide-to-Making-Visual-Novels/blob/master/images/7.png "How our code looks")
 And how it looks when you launch the game:
 ![alt text](https://github.com/lovebirdsnest/Guide-to-Making-Visual-Novels/blob/master/images/8.png "How our game looks")
 
