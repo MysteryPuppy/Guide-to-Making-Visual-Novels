@@ -1,6 +1,6 @@
 # Guide to Making Visual Novels
 ### How anyone can turn a story into a game with no programming experience
-![alt text](https://github.com/lovebirdsnest/Guide-to-Making-Visual-Novels/blob/master/images/home.png "Example visual novel")
+![alt text](https://github.com/lovebirdsnest/Guide-to-Making-Visual-Novels/blob/master/images/home.png "Example visual novel")<br/>
 If you ever wanted to be able to tell a story visually but didn't quite know where to start or felt intimidated by the coding aspect of making a visual novel, this guide is for you. I just spent the summer teaching children ages 10-18 how to code their own visual novels and I can hereby say that I know that *anyone* can create an amazing game. With a little bit of time, and after understanding of some basic concepts, creating a visual novel these days is very intuitive and a fun process.
 
 Again, **no** prior coding experience is needed. Let's get started!
