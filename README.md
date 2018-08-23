@@ -5,7 +5,7 @@ If you've ever wanted to be able to tell a story visually but didn't quite know 
 
 Again, **no** prior coding experience is needed. Let's get started!
 
-#### Getting Started & The Basics
+#### 📒 Getting Started & The Basics
 
 1. To code our visual novel, we're going to be using a game engine called [Ren'Py](https://www.renpy.org). If you visit their site, it's quite easy to install the engine on your Windows, Linux, and Mac machine. Ren'Py allows the user to code in a simple script language derived from Python. It also allows the user to easily package and distribute their finished games to itch.io, other game sites, and as full applications.
 
@@ -29,10 +29,11 @@ I'm going to be using the assets I used in my game. But I'll also teach you how 
 To make your character, just open your image editor (I recommend Photoshop or [Paint Tool Sai](https://www.google.com/search?q=paint%20tool%20sai)) and make a canvas 456x700 pixels large. Next, make sure your bottom layer is transparent, and create a new layer on top of it. Draw how you want your character to look and then once you're done, export it as a PNG into the "images" folder of your game (which, again, you can pull up by clicking the "images" option under "Open Directory").
 ![alt text](https://github.com/lovebirdsnest/Guide-to-Making-Visual-Novels/blob/master/images/4.png "Character in Photoshop with transparent background")
 You can also create a background in the same way, with just a different canvas size. The background also shouldn't be transparent, so fill that sucker in. Export the background as a PNG as well and save in the "images" folder.<br/>
-<mark>A note on Ren'py naming conventions:</mark> backgrounds should be saved as `bg [name].png` for example: `bg bedroom.png` and characters should be saved as `[name][action].png` for example: `eileen happy.png`. By the end of your game, you'll probably have many images saved here.
+**A note on Ren'py naming conventions:** backgrounds should be saved as `bg [name].png` for example: `bg bedroom.png` and characters should be saved as `[name][action].png` for example: `eileen happy.png`. I don't capitalize any of my images names. <br/>
+By the end of your game, you'll probably have many images saved here.
 ![alt text](https://github.com/lovebirdsnest/Guide-to-Making-Visual-Novels/blob/master/images/5.png "Lots of images saved")
 
-7. Now that we have our images prepared (you don't have to have all of them done yet, of course) we can start making our game look like the real deal. To do this, switch back to your text editor and we're going to create a new character. Now, I'm going to create a new character named "Kiwi." Do you remember how to create new characters? We can create a new character by writing `define k = Character("Kiwi")`. Okay, now we have defined "Kiwi" and I'm going to simply delete the default text that Ren'Py put into our file other than the `label start` and `return` at the end. I'm going to also make our character say something by writing `k "Good morning!"`
+7. Now that we have our images prepared (you don't have to have all of them done yet, of course) we can start making our game look like the real deal. To do this, switch back to your text editor and we're going to create a new character. I'm going to create a new character named "Kiwi." Do you remember how to create new characters? We can create a new character by writing `define k = Character("Kiwi")`. Okay, now we have defined "Kiwi" and I'm going to simply delete the default text that Ren'Py put into our file other than the `label start` and `return` at the end. I'm going to also make our character say something by writing `k "Good morning!"`
 ![alt text](https://github.com/lovebirdsnest/Guide-to-Making-Visual-Novels/blob/master/images/6.png "How our code looks")
 Now comes the part where we put our images to life. To show a character image on the screen, you simply write `show [name][action]` or, in this case, `show kiwi normal` since I saved my file as `kiwi normal.png`. I'm going to put this right before kiwi says his line. You can also tell Ren'Py where to put the character on the screen by writing `show [name][action] at [right/left]`. In this case I want Kiwi on the left of my screen so I'll write `show kiwi normal at left`. <br/>
 This is good, but we're still missing the background. To add a background, all you have to do is type `scene bg [name]`. Here, I'm going to use my bedroom scene and type `scene bg bedroom` above `show kiwi normal at left`.
@@ -41,14 +42,14 @@ What our code looks like so far:
 And how it looks when you launch the game:
 ![alt text](https://github.com/lovebirdsnest/Guide-to-Making-Visual-Novels/blob/master/images/8.png "How our game looks")
 
-8. It's starting to look like a real game, right? Well, not quite but it's getting there! Let's add and polish some things up. To add a second character, I'm going to define a new character under kiwi's definition named Melon. To do this I'll write `define m = Character("Melon")`. We can show Melon in the scene the same we showed Kiwi. Under where we wrote `show kiwi normal at left`, let's write `show melon normal at right` so that the two characters don't overlap each other. Now we have two characters on the screen and can have them talk to each other. Remember, to <mark> hide a character, just write `hide [name]`.</mark> Another thing we can do is give them each different colors for their names. To do this, when we define the characters, we just have to write it like this: `define k = Character(_("Kiwi"), color="#C3FFC6")` where `#C3FFC6` is the color hex code I want Kiwi's name to be. You can find color hex codes [here](http://www.color-hex.com).<br/>
+8. It's starting to look like a real game, right? Well, not quite, but it's getting there! Let's add and polish some things up. To add a second character, I'm going to define a new character under kiwi's definition named Melon. To do this I'll write `define m = Character("Melon")`. We can show Melon in the scene the same way we showed Kiwi. Under where we wrote `show kiwi normal at left`, let's write `show melon normal at right` so that the two characters don't overlap each other. Now we have two characters on the screen and can have them talk to each other. Remember, to <mark> hide a character, just write `hide [name]`.</mark> Another thing we can do is give them each different colors for their names. To do this, when we define the characters, we just have to write it like this: `define k = Character(_("Kiwi"), color="#C3FFC6")` where `#C3FFC6` is the color hex code I want Kiwi's name to be. You can find color hex codes [here](http://www.color-hex.com).<br/>
 To change a character's emotions, you don't have to hide the character. Just write `show [character][new action]` again and it will change the character's image.
 ![alt text](https://github.com/lovebirdsnest/Guide-to-Making-Visual-Novels/blob/master/images/10.png "How our code looks")
 ![alt text](https://github.com/lovebirdsnest/Guide-to-Making-Visual-Novels/blob/master/images/11.png "How our game looks")
-**Test yourself:** Try to change your characters' expressions and the backgrounds! Then make both of your characters have a conversation with each other. Add more dialogue to your code to start creating a cohesive story.
+**Test yourself:** Try to change your characters' expressions and the backgrounds! Then make both of your characters have a conversation with each other. Add more dialogue to your code to start creating an engaging story.
 
 
-#### Using Menus
+#### 📕 Using Menus
 1. Okay, the basics are taken care of but now you're probably wondering how we can allow the user to make choices. Without them being able to make choices, it's not much of a game, is it? To allow the user to make a choice, we have to create a `menu`. To create a menu, all you have to write is:
 
 ```
@@ -61,14 +62,15 @@ menu:
             jump notgreat
 
 ```
+![alt text](https://github.com/lovebirdsnest/Guide-to-Making-Visual-Novels/blob/master/images/12.png "How our code looks")  
 2. The first line `m "Oh my weekend..."` appears in the dialogue box under the options and `"It's been great"` and `"It could be better"` are both the choices that the user can click on. The colon after the two choices is **important** so don't forget it. Then on the lines `jump [label]` underneath them, remember to tab them in since this is python-based and after colons in python you tab in the next line. When you `jump [label]` it tells Ren'Py to look for the label name lower in the code. This means that we have to create some new labels!<br/>
 Labels are pretty simple to make and we actually already have a label in our game already. The code `label start` near the beginning of our code is a label called "start". We're going to be making two new labels "great" and "not great." Once you make the labels, you can continue how you want your story to go. **Note:** There can be more than 2 options in a menu, just continue to add options in the same way we showed above.
-![alt text](https://github.com/lovebirdsnest/Guide-to-Making-Visual-Novels/blob/master/images/12.png "How our code looks")  
-3. Test this code out and you might run into an issue however. If you click the option "It's been great" we get both responses. This is because label great doesn't have a `return` or a new `jump` so it just goes down to the next label automatically. To remedy this, you can just make it jump to a new label (maybe one both of our created labels can jump to, to rejoin them again) or just put a `return` statement in there to end the game. I'm going to be merging my labels again and then ending the game so that you can see how one goes about using labels a little more.
+3. Test this code out and you might run into an issue however. If you click the option "It's been great" we get both responses. This is because label great doesn't have a `return` or a new `jump` so it just goes down to the next label automatically. To remedy this, you can just make it jump to a new label (maybe one both of our created labels can jump to, to rejoin them again) or just put a `return` statement in there to end the game. I'm going to be  merging my labels again and then ending the game so that you can see how one goes about using labels a little more.
 ![alt text](https://github.com/lovebirdsnest/Guide-to-Making-Visual-Novels/blob/master/images/13.png "How our code looks")
+4. Don't mind the little typo in there, be glad that now you have mastered making menus!
 
-#### Changing the Main Menu Picture
-1. to make our game look nice to new players, let's change the main menu picture so we're not just staring at a solid color. To do this, open "gui" under "Open directory" on the Ren'py application.
+#### 📗 Changing the Main Menu Picture
+1. to make our game look nice to players, let's change the main menu picture so we're not just staring at a solid color. To do this, open "gui" under "Open directory" on the Ren'py application.
 2. Once this opens, look for a file called `main_menu.png` and open it in your image editor. Color/replace the solid color with whatever you want your game menu image to be. Once you're done, save your image and it should appear on the screen the next time you launch the game.  
 3. When you launch the game, you'll notice that the name of the game still appears in the bottom right hand corner. If you don't want the name of your game to appear there, don't fret. Open the `options.rpy` file from under `Edit File` and find the line that says `define gui.show_name = True`. Change `True` to `False` and you're good to go.
 ![alt text](https://github.com/lovebirdsnest/Guide-to-Making-Visual-Novels/blob/master/images/9.png "How our game looks")  
